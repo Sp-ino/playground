@@ -87,6 +87,13 @@ fn main() {
     io::stdin().read_line(&mut myinput)
                 .expect("String read failed.");
     
+    // the .trim method removes formatting added by read_line 
+    // and converts the String to string literal. Without
+    // calling trim(), myinput would remain a string and
+    // we would not be able to compare it to "valerio", "luca"
+    // or "gianni" for 2 reasons:
+    // 1) the formatting from read_line()
+    // 2) the fact that String and &str are not the same type
     let myinput = myinput.trim();
 
     println!("You entered {myinput}");
